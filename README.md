@@ -129,7 +129,8 @@ As described in the [JWT RFC](https://tools.ietf.org/html/draft-ietf-oauth-json-
 IDateTimeProvider provider = new UtcDateTimeProvider();
 var now = provider.GetNow();
 
-var unixEpoch = JwtValidator.UnixEpoch; // 1970-01-01 00:00:00 UTC
+//var unixEpoch = JwtValidator.UnixEpoch; // 1970-01-01 00:00:00 UTC
+var unixEpoch = UnixEpoch.Value; // 1970-01-01 00:00:00 UTC
 var secondsSinceEpoch = Math.Round((now - unixEpoch).TotalSeconds);
 
 var payload = new Dictionary<string, object>
